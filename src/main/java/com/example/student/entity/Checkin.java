@@ -21,7 +21,9 @@ import javax.persistence.Table;
 @Table(name = "checkin")
 public class Checkin {
 
+    
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", length = 11, nullable = false)
     private int id;
 

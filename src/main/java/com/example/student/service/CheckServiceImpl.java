@@ -13,6 +13,7 @@ import com.example.student.model.RequestJsonClient;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,18 +39,32 @@ public class CheckServiceImpl implements CheckServiceIF {
     public ArrayList<CheckDto> create(ArrayList<RequestJsonClient> data) {
         Date now = new Date();
         Timestamp ts = new Timestamp(now.getTime());
-        ArrayList<Checkin> list = new ArrayList<>();
+        ArrayList<Checkin> newCheck = new ArrayList<>();
         for (RequestJsonClient requestJsonClient : data) {
-            System.out.println("newCheck: "+requestJsonClient.getId());
-            System.out.println("newCheck: "+requestJsonClient.getStatus());
+            System.out.println("newCheck: " + requestJsonClient.getId());
+            System.out.println("newCheck: " + requestJsonClient.getStatus());
             Checkin check = new Checkin();
+            System.err.println(check.getId());
             check.setIdSubTeaStu(requestJsonClient.getId());
             check.setStatus(requestJsonClient.getStatus());
             check.setTime(ts);
-            list.add(check);
+//            checkDaoIF.save(check);
+            newCheck.add(check);
         }
-        ArrayList<Checkin> newCheck = (ArrayList) checkDaoIF.saveAll(list);
-        return CheckMapper.toListDto(newCheck);
+        checkDaoIF.saveAll(newCheck);
+//        Checkin test1 = new Checkin();
+//        test1.setIdSubTeaStu(1);
+//        test1.setStatus(0);
+//        test1.setTime(ts);
+//        list.add(test1);
+//        Checkin test2 = new Checkin();
+//        test2.setIdSubTeaStu(2);
+//        test2.setStatus(0);
+//        test2.setTime(ts);
+//        list.add(test2);
+//        System.out.println("list: " + list);
+//        List<Checkin> newCheck = checkDaoIF.saveAll(list);
+        return CheckMapper.toListDto((ArrayList<Checkin>)newCheck);
     }
 
 }
