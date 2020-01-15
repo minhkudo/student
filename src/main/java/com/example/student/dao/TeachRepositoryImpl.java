@@ -37,7 +37,6 @@ public class TeachRepositoryImpl implements TeachRepositoryIF {
             sql += " AND STATUS = ? ";
         }
         sql += " ORDER BY ID DESC LIMIT ? , ?";
-        System.out.println("sql: " + sql);
         try {
             Query query = entityManager.createNativeQuery(sql, Teach.class);
             int i = 1;

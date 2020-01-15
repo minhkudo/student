@@ -37,7 +37,6 @@ public class SubTeachStudentRepositoryImpl implements SubTeachStudentRepositoryI
             sql += " AND CODE_STUDENT like ? ";
         }
         sql += " ORDER BY ID DESC LIMIT ? , ?";
-        System.out.println("sql: " + sql);
         try {
             Query query = entityManager.createNativeQuery(sql, SubTeachStudent.class);
             int i = 1;

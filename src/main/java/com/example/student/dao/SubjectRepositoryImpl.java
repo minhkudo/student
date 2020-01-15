@@ -34,7 +34,6 @@ public class SubjectRepositoryImpl implements SubjectRepositoryIF {
             sql += " AND NAME like ? ";
         }
         sql += " ORDER BY ID DESC LIMIT ? , ?";
-        System.out.println("sql: " + sql);
         try {
             Query query = entityManager.createNativeQuery(sql, Subject.class);
             int i = 1;

@@ -41,10 +41,10 @@ public class CheckServiceImpl implements CheckServiceIF {
         Timestamp ts = new Timestamp(now.getTime());
         ArrayList<Checkin> newCheck = new ArrayList<>();
         for (RequestJsonClient requestJsonClient : data) {
-            System.out.println("newCheck: " + requestJsonClient.getId());
-            System.out.println("newCheck: " + requestJsonClient.getStatus());
+//            System.out.println("newCheck: " + requestJsonClient.getId());
+//            System.out.println("newCheck: " + requestJsonClient.getStatus());
             Checkin check = new Checkin();
-            System.err.println(check.getId());
+//            System.err.println(check.getId());
             check.setIdSubTeaStu(requestJsonClient.getId());
             check.setStatus(requestJsonClient.getStatus());
             check.setTime(ts);

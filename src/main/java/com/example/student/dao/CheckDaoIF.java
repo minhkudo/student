@@ -18,6 +18,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CheckDaoIF extends JpaRepository<Checkin, Integer> {
 
-    @Query(nativeQuery = true, value = "Select * from `checkin` where ID_STS = ?1")
+    @Query(nativeQuery = true, value = "Select * from checkin where ID_STS = ?1")
     public ArrayList<Checkin> findListCheck(int id);
 }

@@ -37,7 +37,6 @@ public class StudentRepositoryImpl implements StudentRepositoryIF {
             sql += " AND STATUS = ? ";
         }
         sql += " ORDER BY ID DESC LIMIT ? , ?";
-        System.out.println("sql: " + sql);
         try {
             Query query = entityManager.createNativeQuery(sql, Student.class);
             int i = 1;

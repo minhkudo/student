@@ -195,6 +195,7 @@ public class PageStudentController {
 
     @GetMapping(value = "/check")
     public String getCheck(Model model, @RequestParam(value = "id_sts") int id_sts) {
+         model.addAttribute("id_sts", id_sts);
         return "student/check";
     }
 

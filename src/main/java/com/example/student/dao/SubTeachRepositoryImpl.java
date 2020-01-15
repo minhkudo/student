@@ -34,7 +34,6 @@ public class SubTeachRepositoryImpl implements SubTeachRepositoryIF {
             sql += " AND CODE_TEACH like ? ";
         }
         sql += " ORDER BY ID DESC LIMIT ? , ?";
-        System.out.println("sql: " + sql);
         try {
             Query query = entityManager.createNativeQuery(sql, SubTeach.class);
             int i = 1;
@@ -65,7 +64,6 @@ public class SubTeachRepositoryImpl implements SubTeachRepositoryIF {
             sql += " AND CODE_TEACH like ? ";
         }
         sql += " ORDER BY ID DESC LIMIT ? , ?";
-        System.out.println("sql: " + sql);
         try {
             Query query = entityManager.createNativeQuery(sql, SubTeach.class);
             int i = 1;
@@ -100,7 +98,6 @@ public class SubTeachRepositoryImpl implements SubTeachRepositoryIF {
             sql += " AND CODE_TEACH like ? ";
         }
         sql += " ORDER BY ID DESC LIMIT ? , ?";
-        System.out.println("sql: " + sql);
         try {
             Query query = entityManager.createNativeQuery(sql, SubTeach.class);
             int i = 1;
