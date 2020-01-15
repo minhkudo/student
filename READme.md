@@ -26,4 +26,15 @@ II.	Phân Tích
 + Mỗi sinh viên được tạo tài khoản để tìm lớp học và xem giáo viên dạy lớp đó
 + Khi chọn lớp thì sinh viên sẽ đc ghi tên vào danh sách sinh viên của giáo viên dạy lớp đó để theo dõi điểm danh
 4)	 Công cụ
+Cấu trúc và các công cụ được sử dụng của project:
+
+Version control: git
+Database: mysql, phpmyadmin
+BackEnd: Java
+Framework; spring boot
+Gin-gonic : https://github.com/minhkudo/student
+IDE : Netbean
+Testing:https://student-minhnh.herokuapp.com/swagger-ui.html#/
+FrontEnd: Angularjs
+
 III.	Thực Hành
