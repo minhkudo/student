@@ -130,8 +130,12 @@ public class WebMvcConfig extends WebSecurityConfigurerAdapter {
         // Vô hiệu hóa toàn bộ bảo mật đối với các request vào các đường dẫn sau
         // Không phải trải qua filter
         web.ignoring().antMatchers(
+                "/v2/api-docs",
+                "/configuration/ui",
                 "/swagger-resources/**",
+                "/configuration/security",
                 "/swagger-ui.html",
+                "/webjars/**",
                 "/css/**",
                 "/img/**",
                 "/images/**",

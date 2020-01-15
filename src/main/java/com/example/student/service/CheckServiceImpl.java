@@ -48,22 +48,9 @@ public class CheckServiceImpl implements CheckServiceIF {
             check.setIdSubTeaStu(requestJsonClient.getId());
             check.setStatus(requestJsonClient.getStatus());
             check.setTime(ts);
-//            checkDaoIF.save(check);
             newCheck.add(check);
         }
         checkDaoIF.saveAll(newCheck);
-//        Checkin test1 = new Checkin();
-//        test1.setIdSubTeaStu(1);
-//        test1.setStatus(0);
-//        test1.setTime(ts);
-//        list.add(test1);
-//        Checkin test2 = new Checkin();
-//        test2.setIdSubTeaStu(2);
-//        test2.setStatus(0);
-//        test2.setTime(ts);
-//        list.add(test2);
-//        System.out.println("list: " + list);
-//        List<Checkin> newCheck = checkDaoIF.saveAll(list);
         return CheckMapper.toListDto((ArrayList<Checkin>)newCheck);
     }
 
